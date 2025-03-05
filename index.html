@@ -3,421 +3,370 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Project</title>
-    <link rel="stylesheet" href="assets/stylesheet/global.css" />
-    <link rel="stylesheet" href="assets/stylesheet/master.css" />
+    <title>loginForm</title>
+    <link rel="stylesheet" href="css/fontello.css" />
+
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        background-color: #7f7f7f;
+        position: relative;
+        > main {
+          /* background: yellow; */
+          width: 75%;
+          height: 100vh;
+          margin: 0 auto;
+          > * {
+            /* border: black solid 3px; */
+            width: 100%;
+          }
+          > header {
+            /* background: red; */
+            height: 10%;
+            > * {
+              /* border: black solid 3px; */
+              height: 100%;
+              float: left;
+            }
+            #logo {
+              width: 15%;
+              display: flex;
+              align-items: center;
+              > p {
+                /* border: black solid 3px; */
+                color: #ff7200;
+                font-size: 40px;
+                /* border: blue solid 3px; */
+
+                height: auto;
+              }
+            }
+            nav {
+              width: 55%;
+              display: flex;
+              align-items: center;
+              > ul {
+                margin: 0 auto;
+                width: 90%;
+                height: auto;
+                display: flex;
+                justify-content: space-between;
+                > li {
+                  list-style-type: none;
+                  float: left;
+                  width: auto;
+                  margin: 0;
+                  > a {
+                    text-decoration: none;
+                    color: #ffffff;
+                    /* border: blue solid 3px; */
+                    padding: 0;
+                    transition: 0.4s;
+                    &:hover {
+                      color: #ff7200;
+                    }
+                  }
+                }
+              }
+            }
+            #searchInput {
+              width: 30%;
+              display: flex;
+              align-items: center;
+              > * {
+                border: none;
+                height: 60%;
+                float: left;
+              }
+              input {
+                width: 66%;
+                border: #ff7200 solid 2px;
+                outline: none;
+                font-size: 20px;
+                background-color: #7f7f7f;
+                padding-left: 5px;
+                color: #ffffff;
+                &::placeholder {
+                  color: #ffffff;
+                }
+              }
+              button {
+                width: 34%;
+                background: #ff7200;
+                color: #ffffff;
+                font-size: 20px;
+                &:hover {
+                  color: black;
+                }
+              }
+            }
+          }
+          > section {
+            height: 90%;
+            display: flex;
+            align-items: center;
+            > #wrapper {
+              /* background: red; */
+              width: 100%;
+              height: 70%;
+              > * {
+                /* border: black solid 3px; */
+                height: 100%;
+              }
+              > #left {
+                padding: 5% 0;
+                float: left;
+                width: 60%;
+                > * {
+                  color: #ffffff;
+                }
+                > h1 {
+                  font-size: 40px;
+                  height: 40%;
+                  > pre {
+                    > span {
+                      color: #ff7200;
+                    }
+                  }
+                }
+                > p {
+                  margin-top: 3px;
+                  height: 30%;
+                  font-size: 20px;
+                }
+                > a {
+                  text-decoration: none;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 15%;
+                  width: 23%;
+                  background: #ff7200;
+                  color: black;
+                  transition: 0.4s;
+                  font-size: 20px;
+                  &:hover {
+                    background-color: #ffffff;
+                  }
+                }
+              }
+              #right {
+                float: right;
+                width: 30%;
+                > form {
+                  height: 100%;
+                  width: 100%;
+                  background: #1a1a1a;
+                  padding: 5% 10%;
+                  > * {
+                    margin: 5% 0;
+                    height: 15%;
+                    width: 100%;
+                  }
+                  > h3 {
+                    font-size: 25px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #ff7200;
+                    background-color: #ffffff;
+                  }
+                  > #email,
+                  #password {
+                    color: #ffffff;
+                    background-color: #1a1a1a;
+                    border: none;
+                    border-bottom: #ff7200 2px solid;
+                    outline: none;
+                    &::placeholder {
+                      color: #7f7f7f;
+                    }
+                  }
+                  > #button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #ff7200;
+                    color: #1a1a1a;
+                    transition: 0.4s;
+                    text-decoration: none;
+                    font-size: 25px;
+                    &:hover {
+                      background-color: #ffffff;
+                    }
+                  }
+                  > p {
+                    color: #ffffff;
+                    > a {
+                      color: #ff7200;
+                      text-decoration: none;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        > .profile {
+          width: 13%;
+          aspect-ratio: 1/1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          &:hover {
+            > div {
+              border: 4px solid red;
+              outline: 4px solid red;
+              > a {
+                opacity: 1;
+                visibility: visible;
+                &:nth-of-type(1) {
+                  top: -20%;
+                  left: -20%;
+                  transition-property: top, left, color;
+                  transition-duration: 1s, 1s, 1s;
+                }
+                &:nth-of-type(2) {
+                  top: -20%;
+                  right: -20%;
+                  transition-property: top, right, color;
+                  transition-duration: 1s, 1s, 1s;
+                  transition-delay: 0.3s, 0.3s, 0s;
+                }
+                &:nth-of-type(3) {
+                  bottom: -20%;
+                  left: -20%;
+                  transition-property: bottom, left, color;
+                  transition-duration: 1s, 1s, 1s;
+                  transition-delay: 0.9s, 0.9s, 0s;
+                }
+                &:nth-of-type(4) {
+                  bottom: -20%;
+                  right: -20%;
+                  transition-property: bottom, right, color;
+                  transition-duration: 1s, 1s, 1s;
+                  transition-delay: 0.6s, 0.6s, 0s;
+                }
+              }
+            }
+          }
+          > div {
+            height: 75%;
+            width: 75%;
+            border-radius: 50%;
+            border: 4px solid red;
+            outline: 4px solid yellow;
+            background-color: darkblue;
+            padding: 3.3%;
+            z-index: 10000;
+            position: relative;
+            > figure {
+              border-radius: 50%;
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+              > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+            > a {
+              visibility: hidden;
+              position: absolute;
+              font-size: 220%;
+              text-decoration: none;
+              color: red;
+              opacity: 0;
+              z-index: -1;
+              &:hover {
+                color: antiquewhite;
+              }
+              &:nth-of-type(1) {
+                top: 50%;
+                left: 50%;
+              }
+              &:nth-of-type(2) {
+                top: 50%;
+                right: 50%;
+              }
+              &:nth-of-type(3) {
+                bottom: 50%;
+                left: 50%;
+              }
+              &:nth-of-type(4) {
+                bottom: 50%;
+                right: 50%;
+              }
+            }
+          }
+        }
+      }
+    </style>
   </head>
   <body>
-    <main class="row">
+    <main>
       <header>
-        <div>
-          <nav>
-            <ul class="menu">
-              <li><a class="aClass" href="">Home</a></li>
-              <li><a class="aClass" href="">Subscriptions</a></li>
-              <li>
-                <a class="aClass" href="">Shop</a>
-                <div class="row">
-                  <div class="row">
-                    <div class="row">
-                      <h2><a href="">Essential Pages</a></h2>
-                      <ul>
-                        <li><a class="aClass" href="">Simple Product</a></li>
-                        <li><a class="aClass" href="">Variable Product</a></li>
-                        <li><a class="aClass" href="">External Product</a></li>
-                        <li>
-                          <a class="aClass" href="">Simple Subscription</a>
-                        </li>
-                        <li>
-                          <a class="aClass" href="">Variable Subscription</a>
-                        </li>
-                        <li><a class="aClass" href="">Out of stock</a></li>
-                      </ul>
-                    </div>
-                    <div class="row">
-                      <h2><a href="">Essential Pages 2</a></h2>
-                      <ul>
-                        <li><a class="aClass" href="">Product Reviews</a></li>
-                        <li><a class="aClass" href="">On sale Product</a></li>
-                        <li><a class="aClass" href="">Cart</a></li>
-                        <li><a class="aClass" href="">Checkout</a></li>
-                        <li><a class="aClass" href="">My account</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <a href="">
-                      <figure>
-                        <img src="assets/img/blog-image-4.png" alt="" />
-                        <figcaption>Explore subscriptions</figcaption>
-                      </figure>
-                    </a>
-                    <a href="">
-                      <figure>
-                        <img src="assets/img/blog-image-1.png" alt="" />
-                        <figcaption>All products</figcaption>
-                      </figure>
-                    </a>
-                    <a href="">
-                      <figure>
-                        <img src="assets/img/blog-image-3.png" alt="" />
-                        <figcaption>About Us</figcaption>
-                      </figure>
-                    </a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <a class="aClass" href="">Pages</a>
-                <ul>
-                  <li><a class="aClass" href="">About Us</a></li>
-                  <li><a class="aClass" href="">Contact Us</a></li>
-                  <li><a class="aClass" href="">Our blog</a></li>
-                  <li><a class="aClass" href="">404</a></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-          <div>
-            <a class="aBtn"><span>Order now</span></a>
-            <a class="aClass" href="">My account</a>
-            <a class="aClass" href="">Cart(0)</a>
-          </div>
+        <div id="logo">
+          <p>PraRoz</p>
+        </div>
+        <nav>
+          <ul class="list">
+            <li><a href="">HOME</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="">SERVICE</a></li>
+            <li><a href="">DESIGN</a></li>
+            <li><a href="">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div id="searchInput">
+          <input type="text" placeholder="Type To text" />
+          <button>search</button>
         </div>
       </header>
-      <section class="bHeader row">
-        <div>
-          <h2>Fine blend. 30 bags/mo.</h2>
-          <h3>Enjoy fresh & favourite coffee everyday.</h3>
-          <p>75, our street name, Boston, New York – 5623.</p>
-        </div>
-        <figure>
-          <img src="assets/img/home-banner-image (1).png" alt="" />
-        </figure>
-        <div>
-          <div>
-            <div class="row">
-              <h2>Why Macchiato?</h2>
-              <a class="aClass" href="">Explore more</a>
-            </div>
-          </div>
-          <div>
+      <section>
+        <div id="wrapper">
+          <div id="left">
+            <h1>
+              <pre>
+Web Design &
+<span>Development</span>
+Course
+            </pre
+              >
+            </h1>
             <p>
-              Nullam purus metus, faucibus a ipsum vel, dignissim varius tellus.
-              Phasellus congue elit vel tincidunt feugiat. Etiam at sapien
-              vulputate, dignissim eros ac, faucibus leo. Class aptent taciti
-              sociosqu ad.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              neque expedita atque eveniet quis nesciunt. Quos nulla vero
+              consequuntur, fugit nemo ad delectus a quae totam ipsa illum minus
+              laudantium?
             </p>
+            <a href="">JOIN US</a>
           </div>
-          <div>
-            <p>
-              Curabitur eu ante efficitur, porta quam sed, commodo leo. Aliquam
-              eget velit a tortor molestie pellentesque. Ut a purus pharetra
-              orci varius tempor. Aliquam eu ligula libero tortor ut.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section class="description row">
-        <article>
-          <figure><img src="assets/img/bean-leaf.png" alt="" /></figure>
-          <h2>Finest beans from plants</h2>
-          <p>
-            Morbi tempus vel nisl at pretium. Interdum et malesuada fames ac
-            ante ipsum primis in faucibus. In egestas bibendum ipsum, sit amet
-            porttitor scelerisque eu.
-          </p>
-        </article>
-        <article>
-          <figure><img src="assets/img/mill.png" alt="" /></figure>
-          <h2>Fine Roasted</h2>
-          <p>
-            Morbi tempus vel nisl at pretium. Interdum et malesuada fames ac
-            ante ipsum primis in faucibus. In egestas bibendum ipsum, sit amet
-            porttitor scelerisque eu.
-          </p>
-        </article>
-        <article>
-          <figure><img src="assets/img/coffee.png" alt="" /></figure>
-          <h2>Signature flavour</h2>
-          <p>
-            Morbi tempus vel nisl at pretium. Interdum et malesuada fames ac
-            ante ipsum primis in faucibus. In egestas bibendum ipsum, sit amet
-            porttitor scelerisque eu.
-          </p>
-        </article>
-      </section>
-      <section class="products row">
-        <div class="row">
-          <p>Fine roasted . Well grinded</p>
-          <h2>Subscribe to our money saving monthly package</h2>
-          <div class="row">
-            <div></div>
-            <p>.</p>
-            <div></div>
-          </div>
-          <div class="row">
-            <div class="product row">
-              <a href="">
-                <figure>
-                  <img
-                    src="assets/img/product-thumbail-18-600x600.png"
-                    alt="" />
-                  <span>Sale</span>
-                </figure>
-              </a>
-              <div>
-                <a href="">Colombia Strong Beans (Pack)</a>
-                <p>
-                  Strong taste with fine aroma. Your perfect choice for every
-                  morning.
-                </p>
-                <p>
-                  <span><del>$99.90</del></span> $49.90 / month
-                </p>
-                <a class="aBtn"><span>Add to cart</span></a>
-              </div>
-            </div>
-            <div class="product row">
-              <a href="">
-                <figure>
-                  <img
-                    src="assets/img/product-thumbail-17-600x600.png"
-                    alt="" />
-                </figure>
-              </a>
-              <div>
-                <a href="">Caramel Macchiato (Pack)</a>
-                <p>
-                  Strong taste with fine aroma. Your perfect choice for every
-                  morning.
-                </p>
-                <p>$49.90 / month</p>
-                <a class="aBtn"><span>Add to cart</span></a>
-              </div>
-            </div>
-            <div class="product row">
-              <a href="">
-                <figure>
-                  <img
-                    src="assets/img/product-thumbail-20-600x600.png"
-                    alt="" />
-                </figure>
-              </a>
-              <div>
-                <a href=""> Cold Espresso (Pack)</a>
-                <p>
-                  Strong taste with fine aroma. Your perfect choice for every
-                  morning.
-                </p>
-                <p>$49.90 / month</p>
-                <a class="aBtn"><span>Add to cart</span></a>
-              </div>
-            </div>
-            <div class="product row">
-              <a href="">
-                <figure>
-                  <img
-                    src="assets/img/product-thumbail-18-600x600.png"
-                    alt="" />
-                </figure>
-              </a>
-              <div>
-                <a href="">Arabia Roasted Beans (Pack)</a>
-                <p>
-                  Strong taste with fine aroma. Your perfect choice for every
-                  morning.
-                </p>
-                <p>$49.90 / month</p>
-                <a class="aBtn"><span>Add to cart</span></a>
-              </div>
-            </div>
+          <div id="right">
+            <form action="">
+              <h3>Login Here</h3>
+              <input id="email" type="email" placeholder="Enter Email Here" />
+              <input
+                id="password"
+                type="password"
+                placeholder="Enter Password Here" />
+              <a id="button" href="">Login</a>
+              <p>Don't have an account <a href="">Sign up</a> here</p>
+            </form>
           </div>
         </div>
       </section>
-      <section class="bProducts row">
-        <div>
-          <figure>
-            <img src="assets/img/home-image-1-1024x1024.png" alt="" />
-          </figure>
-        </div>
-        <div>
-          <p>Purely coffee beans</p>
-          <h2>Flavored coffee from a fine roasted coffee beans.</h2>
-          <a class="aBtn" href=""><span>Go to our shop</span></a>
-        </div>
-      </section>
-      <section class="recommend products row">
-        <div class="row">
-          <p>Buy whenever you need it.</p>
-          <h2>Highly recommended products</h2>
-          <div class="row">
-            <div></div>
-            <p>.</p>
-            <div></div>
-          </div>
-          <div class="row">
-            <div class="product row">
-              <a href="">
-                <figure>
-                  <img
-                    src="assets/img/product-thumbail-18-600x600.png"
-                    alt="" />
-                  <span>Sale</span>
-                </figure>
-              </a>
-              <div>
-                <a href="">Colombia Strong Beans (Pack)</a>
-                <p>
-                  Strong taste with fine aroma. Your perfect choice for every
-                  morning.
-                </p>
-                <p>
-                  <span><del>$99.90</del></span> $49.90 / month
-                </p>
-                <a class="aBtn"><span>Add to cart</span></a>
-              </div>
-            </div>
-            <div class="product row">
-              <a href="">
-                <figure>
-                  <img
-                    src="assets/img/product-thumbail-17-600x600.png"
-                    alt="" />
-                </figure>
-              </a>
-              <div>
-                <a href="">Caramel Macchiato (Pack)</a>
-                <p>
-                  Strong taste with fine aroma. Your perfect choice for every
-                  morning.
-                </p>
-                <p>$49.90 / month</p>
-                <a class="aBtn"><span>Add to cart</span></a>
-              </div>
-            </div>
-            <div class="product row">
-              <a href="">
-                <figure>
-                  <img
-                    src="assets/img/product-thumbail-20-600x600.png"
-                    alt="" />
-                </figure>
-              </a>
-              <div>
-                <a href=""> Cold Espresso (Pack)</a>
-                <p>
-                  Strong taste with fine aroma. Your perfect choice for every
-                  morning.
-                </p>
-                <p>$49.90 / month</p>
-                <a class="aBtn"><span>Add to cart</span></a>
-              </div>
-            </div>
-            <div class="product row">
-              <a href="">
-                <figure>
-                  <img
-                    src="assets/img/product-thumbail-18-600x600.png"
-                    alt="" />
-                </figure>
-              </a>
-              <div>
-                <a href="">Arabia Roasted Beans (Pack)</a>
-                <p>
-                  Strong taste with fine aroma. Your perfect choice for every
-                  morning.
-                </p>
-                <p>$49.90 / month</p>
-                <a class="aBtn"><span>Add to cart</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="bRecommend row">
-        <div class="row">
-          <p>Signature flavours & rich taste.</p>
-          <h2>Taste our variety of coffees & keep your day fresh.</h2>
-        </div>
-        <div class="row">
-          <div></div>
-          <div class="row">
-            <h2>Choose from our packs</h2>
-            <p>
-              Class aptent taciti sociosqu ad litora torquent per conubia
-              nostra, auctor et per inceptos himenaeos.
-            </p>
-            <a href="" class="aClass">Explore our categories</a>
-          </div>
-        </div>
-      </section>
-      <section class="save">
-        <div class="row">
-          <div>
-            <h2>Save more! when purchasing our monthly pack.</h2>
-            <p>
-              Mauris placerat elit eu massa lacinia porttitor. Donec pretium
-              porttitor felis, egestas dictum justo congue a.
-            </p>
-            <a class="aBtn" href=""><span>Go to our shop</span></a>
-          </div>
-          <figure>
-            <img src="assets/img/home-image-4-1024x653.png" alt="" />
-          </figure>
-        </div>
-      </section>
-      <sectioin class="loc row">
-        <figure>
-          <img src="assets/img/home-image-5-1024x1024.png" alt="" />
-        </figure>
-        <div class="row">
-          <p>We also have a decent store.</p>
-          <h2>Love Dine-In? Drive to our shop with your family or loved one</h2>
-          <p>75, our street name, Boston, New York – 5623.</p>
-          <p>Mon – Fri (9:30AM – 7:30PM)</p>
-          <a href="" class="aBtn"><span>Locate Us</span></a>
-        </div>
-      </sectioin>
-      <footer>
-        <div class="row">
-          <div>
-            <img src="assets/img/logo-lite.png" alt="" />
-          </div>
-          <div>
-            <h2>Our shop</h2>
-            <ul>
-              <li><a href="" class="aClass">Subscription plans</a></li>
-              <li><a href="" class="aClass">All products</a></li>
-              <li><a href="" class="aClass">Our factory</a></li>
-            </ul>
-          </div>
-          <div>
-            <h2>Useful links</h2>
-            <ul>
-              <li><a href="" class="aClass">Return & refunds</a></li>
-              <li><a href="" class="aClass">Privacy policy</a></li>
-              <li><a href="" class="aClass">Contact us</a></li>
-            </ul>
-          </div>
-          <div>
-            <h2>CODED BY NIMA</h2>
-            <h2>MY SOCIAL</h2>
-            <a class="aClass" href="https://github.com/82NIMA03">GITHUB</a>
-            <a
-              class="aClass"
-              href="https://www.instagram.com/nima_frontzi_dev?igsh=cGQ3OXE4d3N3NWJh&utm_source=qr"
-              >INSTAGRAM</a
-            >
-            <a
-              class="aClass"
-              href="https://www.linkedin.com/in/nima-firoozi-55a909306/"
-              >LINKEDIN</a
-            >
-          </div>
-        </div>
-      </footer>
-          <div class="profile">
+    </main>
+    <div class="profile">
       <div>
         <figure><img src="images/profile.webp" alt="" /></figure>
         <a href="https://www.linkedin.com/in/nima-firoozi-55a909306"
@@ -432,6 +381,5 @@
         <a href="tel:+989023083861"><i class="icon-phone-icon"></i></a>
       </div>
     </div>
-    </main>
   </body>
 </html>
